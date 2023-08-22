@@ -1,0 +1,375 @@
+{
+  "author": { "avatar_url": null, "id": 1252796, "name": "Rasheed Sobowale" },
+  "body": "Algerian prosecutors on Tuesday sought a one-year prison sentence for the country\u2019s richest man Issad Rebrab who went on trial accused of tax, banking and customs offences.\n\nThe 74-year-old, who heads Algeria\u2019s biggest privately-owned conglomerate Cevital, was one of several tycoons arrested in April as part of a corruption investigation.\n\nThe probe followed the resignation of president Abdelaziz Bouteflika after weeks of mass protests against his 20-year rule.\n\nRebrab is being tried along with two companies, Cevital subsidiary Evcon and the Jordan-based Housing Bank for Trade and Finance, according to national news agency APS, which reported the prosecutors\u2019 sentencing request.\n\nThey are charged with breaking laws on foreign exchange and fund transfers as well as forgery and false custom declarations.\n\nForbes magazine lists Rebrab as Algeria\u2019s richest man and the sixth-wealthiest in Africa, with a net worth of $3.9 billion in 2019.\n\nCevital employs 18,000 people, produces\u00a0electronics, steel and food, and in recent years it has acquired businesses in France.\n\nWhile his businesses flourished under Bouteflika\u2019s rule, Rebrab had backed the protests that ultimately forced the president to resign in April.\n\nHis company has said it was \u201castonished\u201d by his arrest.",
+  "categories": [
+    {
+      "confident": false,
+      "id": "IAB12-2",
+      "level": 2,
+      "links": {
+        "_self": "https://api.aylien.com/api/v1/classify/taxonomy/iab-qag/IAB12-2",
+        "parent": "https://api.aylien.com/api/v1/classify/taxonomy/iab-qag/IAB12"
+      },
+      "score": 0.42,
+      "taxonomy": "iab-qag"
+    },
+    {
+      "confident": false,
+      "id": "IAB11-3",
+      "level": 2,
+      "links": {
+        "_self": "https://api.aylien.com/api/v1/classify/taxonomy/iab-qag/IAB11-3",
+        "parent": "https://api.aylien.com/api/v1/classify/taxonomy/iab-qag/IAB11"
+      },
+      "score": 0.3,
+      "taxonomy": "iab-qag"
+    },
+    {
+      "confident": false,
+      "id": "IAB13-11",
+      "level": 2,
+      "links": {
+        "_self": "https://api.aylien.com/api/v1/classify/taxonomy/iab-qag/IAB13-11",
+        "parent": "https://api.aylien.com/api/v1/classify/taxonomy/iab-qag/IAB13"
+      },
+      "score": 0.11,
+      "taxonomy": "iab-qag"
+    },
+    {
+      "confident": true,
+      "id": "IAB13",
+      "level": 1,
+      "links": {
+        "_self": "https://api.aylien.com/api/v1/classify/taxonomy/iab-qag/IAB13",
+        "parent": null
+      },
+      "score": 0.1,
+      "taxonomy": "iab-qag"
+    },
+    {
+      "confident": true,
+      "id": "IAB11",
+      "level": 1,
+      "links": {
+        "_self": "https://api.aylien.com/api/v1/classify/taxonomy/iab-qag/IAB11",
+        "parent": null
+      },
+      "score": 0.09,
+      "taxonomy": "iab-qag"
+    },
+    {
+      "confident": true,
+      "id": "IAB12",
+      "level": 1,
+      "links": {
+        "_self": "https://api.aylien.com/api/v1/classify/taxonomy/iab-qag/IAB12",
+        "parent": null
+      },
+      "score": 0.08,
+      "taxonomy": "iab-qag"
+    },
+    {
+      "confident": true,
+      "id": "04016022",
+      "level": 3,
+      "links": {
+        "_self": "https://api.aylien.com/api/v1/classify/taxonomy/iptc-subjectcode/04016022",
+        "parent": "https://api.aylien.com/api/v1/classify/taxonomy/iptc-subjectcode/04016000"
+      },
+      "score": 0.12,
+      "taxonomy": "iptc-subjectcode"
+    }
+  ],
+  "characters_count": 1277,
+  "clusters": [102050946],
+  "entities": {
+    "body": [
+      {
+        "indices": [[1001, 1005]],
+        "links": { "dbpedia": "http://dbpedia.org/resource/Steel" },
+        "score": 0.9980490803718567,
+        "text": "steel",
+        "types": ["Alloys", "Album", "Product", "ChemicalCompound"]
+      },
+      {
+        "indices": [[912, 920]],
+        "links": { "dbpedia": "http://dbpedia.org/resource/Net_worth" },
+        "score": 0.9903861880302429,
+        "text": "net worth",
+        "types": ["Assets", "Organisation"]
+      },
+      {
+        "indices": [[1067, 1072]],
+        "links": { "dbpedia": "http://dbpedia.org/resource/France" },
+        "score": 0.9980266690254211,
+        "text": "France",
+        "types": ["Place", "PopulatedPlace", "Country", "State", "Location"]
+      },
+      {
+        "indices": [[728, 743]],
+        "links": { "dbpedia": "http://dbpedia.org/resource/Foreign_exchange_market" },
+        "score": 0.8733446002006531,
+        "text": "foreign exchange",
+        "types": ["Place", "MusicGenre", "Market"]
+      },
+      {
+        "indices": [[815, 829]],
+        "links": { "dbpedia": "http://dbpedia.org/resource/Forbes" },
+        "score": 1.0,
+        "text": "Forbes magazine",
+        "types": ["WrittenWork", "Product", "PeriodicalLiterature", "Magazine", "Work"]
+      },
+      {
+        "indices": [[897, 902]],
+        "links": { "dbpedia": "http://dbpedia.org/resource/Africa" },
+        "score": 0.9991133809089661,
+        "text": "Africa",
+        "types": ["Place", "Agent", "PopulatedPlace", "Country", "Continent", "World", "Location"]
+      },
+      {
+        "indices": [[619, 629]],
+        "links": { "dbpedia": "http://dbpedia.org/resource/News_agency" },
+        "score": 1.0,
+        "text": "news agency",
+        "types": ["MusicGenre", "Organisation", "Organization"]
+      },
+      {
+        "indices": [
+          [201, 207],
+          [847, 853]
+        ],
+        "links": { "dbpedia": "http://dbpedia.org/resource/Algeria" },
+        "score": 0.996492862701416,
+        "text": "Algeria",
+        "types": ["Place", "PopulatedPlace", "Country", "State", "Location"]
+      },
+      {
+        "indices": [[775, 781]],
+        "links": { "dbpedia": "http://dbpedia.org/resource/Forgery" },
+        "score": 0.9845985174179077,
+        "text": "forgery",
+        "types": ["Election", "PersonFunction", "Process"]
+      },
+      {
+        "indices": [[390, 409]],
+        "links": { "dbpedia": "http://dbpedia.org/resource/Abdelaziz_Bouteflika" },
+        "score": 1.0,
+        "text": "Abdelaziz Bouteflika",
+        "types": ["Person", "Agent", "OfficeHolder", "Politician"]
+      },
+      {
+        "indices": [[235, 246]],
+        "links": { "dbpedia": "http://dbpedia.org/resource/Conglomerate_(company)" },
+        "score": 0.7482798099517822,
+        "text": "conglomerate",
+        "types": ["Drug", "Product", "Combination"]
+      },
+      {
+        "indices": [[534, 538]],
+        "links": null,
+        "score": null,
+        "text": "Evcon",
+        "types": ["Place"]
+      },
+      {
+        "indices": [[548, 553]],
+        "links": null,
+        "score": null,
+        "text": "Jordan",
+        "types": ["Place"]
+      },
+      {
+        "indices": [
+          [9, 19],
+          [655, 665]
+        ],
+        "links": null,
+        "score": null,
+        "text": "prosecutors",
+        "types": ["Place"]
+      },
+      {
+        "indices": [
+          [248, 254],
+          [515, 521],
+          [948, 954]
+        ],
+        "links": null,
+        "score": null,
+        "text": "Cevital",
+        "types": ["Person"]
+      },
+      {
+        "indices": [
+          [102, 107],
+          [467, 472],
+          [837, 842],
+          [1133, 1138]
+        ],
+        "links": null,
+        "score": null,
+        "text": "Rebrab",
+        "types": ["Person"]
+      },
+      {
+        "indices": [[96, 100]],
+        "links": null,
+        "score": null,
+        "text": "Issad",
+        "types": ["Organisation"]
+      },
+      {
+        "indices": [[561, 594]],
+        "links": null,
+        "score": null,
+        "text": "Housing Bank for Trade and Finance",
+        "types": ["Organisation"]
+      },
+      {
+        "indices": [[631, 633]],
+        "links": null,
+        "score": null,
+        "text": "APS",
+        "types": ["Organisation"]
+      },
+      {
+        "indices": [[815, 820]],
+        "links": null,
+        "score": null,
+        "text": "Forbes",
+        "types": ["Organisation"]
+      },
+      {
+        "indices": [
+          [400, 409],
+          [1114, 1123]
+        ],
+        "links": null,
+        "score": null,
+        "text": "Bouteflika",
+        "types": ["Organisation"]
+      }
+    ],
+    "title": [
+      {
+        "indices": [[34, 40]],
+        "links": { "dbpedia": "http://dbpedia.org/resource/Algeria" },
+        "score": 1.0,
+        "text": "Algeria",
+        "types": ["PopulatedPlace", "Location", "Place", "State", "Country"]
+      }
+    ]
+  },
+  "hashtags": [
+    "#Algeria",
+    "#Conglomerate",
+    "#AbdelazizBouteflika",
+    "#NewsAgency",
+    "#ForeignExchangeMarket",
+    "#Forgery",
+    "#Forbes",
+    "#Africa",
+    "#NetWorth",
+    "#Steel",
+    "#France"
+  ],
+  "id": 53181482,
+  "keywords": [
+    "Prosecutors",
+    "Algeria",
+    "jail",
+    "year",
+    "Rebrab",
+    "Cevital",
+    "sentence",
+    "banking",
+    "customs",
+    "prosecutors",
+    "president",
+    "April",
+    "companies",
+    "Bouteflika",
+    "rule",
+    "protests",
+    "laws",
+    "one-year",
+    "request",
+    "transfers",
+    "steel",
+    "net worth",
+    "France",
+    "foreign exchange",
+    "Forbes magazine",
+    "Africa",
+    "news agency",
+    "forgery",
+    "Abdelaziz Bouteflika",
+    "conglomerate"
+  ],
+  "language": "en",
+  "links": {
+    "canonical": null,
+    "coverages": "/coverages?story_id=53181482",
+    "permalink": "https://www.vanguardngr.com/2019/12/prosecutors-seek-year-in-jail-for-algerias-richest-man/",
+    "related_stories": "/related_stories?story_id=53181482"
+  },
+  "media": [
+    {
+      "content_length": 47987,
+      "format": "JPEG",
+      "height": 882,
+      "type": "image",
+      "url": "https://i1.wp.com/www.vanguardngr.com/wp-content/uploads/2019/12/Issad-Rebrab.jpg?fit=1248%2C882&ssl=1",
+      "width": 1248
+    }
+  ],
+  "paragraphs_count": 9,
+  "published_at": "2019-12-31 22:42:59+00:00",
+  "sentences_count": 9,
+  "sentiment": {
+    "body": { "polarity": "negative", "score": 0.65326 },
+    "title": { "polarity": "neutral", "score": 0.578695 }
+  },
+  "social_shares_count": {
+    "facebook": [
+      { "count": 43, "fetched_at": "2020-01-01 18:25:07+00:00" },
+      { "count": 40, "fetched_at": "2020-01-01 12:25:33+00:00" },
+      { "count": 37, "fetched_at": "2020-01-01 06:26:01+00:00" },
+      { "count": 33, "fetched_at": "2020-01-01 00:25:47+00:00" }
+    ],
+    "google_plus": [],
+    "linkedin": [],
+    "reddit": [
+      { "count": 0, "fetched_at": "2020-01-01 18:13:23+00:00" },
+      { "count": 0, "fetched_at": "2020-01-01 09:16:56+00:00" },
+      { "count": 0, "fetched_at": "2020-01-01 00:19:06+00:00" }
+    ]
+  },
+  "source": {
+    "description": null,
+    "domain": "vanguardngr.com",
+    "home_page_url": "http://www.vanguardngr.com/",
+    "id": 142,
+    "links_in_count": null,
+    "locations": [],
+    "logo_url": "https://i1.wp.com/www.vanguardngr.com/wp-content/uploads/2016/06/favicon.png?fit=16%2C16&ssl=1",
+    "name": "Vanguard",
+    "rankings": {
+      "alexa": [
+        { "country": null, "fetched_at": "2019-06-06 16:37:43+00:00", "rank": 1709 },
+        { "country": "IN", "fetched_at": "2019-06-06 16:37:43+00:00", "rank": 24241 },
+        { "country": "BG", "fetched_at": "2019-06-06 16:37:43+00:00", "rank": 1940 },
+        { "country": "US", "fetched_at": "2019-06-06 16:37:43+00:00", "rank": 27859 },
+        { "country": "NG", "fetched_at": "2019-06-06 16:37:43+00:00", "rank": 38 },
+        { "country": "GB", "fetched_at": "2019-06-06 16:37:43+00:00", "rank": 15916 },
+        { "country": "ZA", "fetched_at": "2019-06-06 16:37:43+00:00", "rank": 3075 },
+        { "country": "DE", "fetched_at": "2019-06-06 16:37:43+00:00", "rank": 16675 }
+      ]
+    },
+    "scopes": [],
+    "title": null
+  },
+  "summary": "Algerian prosecutors on Tuesday sought a one-year prison sentence for the country\u2019s richest man Issad Rebrab who went on trial accused of tax, banking and customs offences. The 74-year-old, who heads Algeria\u2019s biggest privately-owned conglomerate Cevital, was one of several tycoons arrested in April as part of a corruption investigation. Rebrab is being tried along with two companies, Cevital subsidiary Evcon and the Jordan-based Housing Bank for Trade and Finance, according to national news agency APS, which reported the prosecutors\u2019 sentencing request. Forbes magazine lists Rebrab as Algeria\u2019s richest man and the sixth-wealthiest in Africa, with a net worth of $3.9 billion in 2019. While his businesses flourished under Bouteflika\u2019s rule, Rebrab had backed the protests that ultimately forced the president to resign in April.",
+  "title": "Prosecutors seek year in jail for Algeria's richest man",
+  "words_count": 205
+}

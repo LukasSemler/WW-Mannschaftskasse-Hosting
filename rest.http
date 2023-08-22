@@ -1,0 +1,47 @@
+GET http://localhost:2410/test
+
+
+### Spieler erstellen
+POST http://localhost:2410/spieler
+Content-Type: application/json
+
+{
+    "vorname": "TestVorname",
+    "nachname": "TestNachname",
+    "email": "test@mail.at",
+    "profilbildUrl": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Ideen%20perfektes%20Profilbild.jpg"
+}
+
+
+### Spieler löschen
+DELETE http://localhost:2410/spieler/7
+
+### Alle Spieler bekommen
+GET http://localhost:2410/spieler
+
+
+### ----------------------- ###
+
+
+### Zahlung von einem spieler bekommen
+GET http://localhost:2410/zahlung/2
+
+
+### Zahlung erstellen
+POST http://localhost:2410/zahlung
+Content-Type: application/json
+
+{
+    "spielerID": 2,
+    "betrag": 14.99,
+    "grund": "Beleidigung anderer Spieler"
+}
+
+
+### Zahlung auf bezahlt setzen
+PATCH http://localhost:2410/zahlung/9
+
+
+### Zahlung löschen
+DELETE http://localhost:2410/zahlung/9
+
