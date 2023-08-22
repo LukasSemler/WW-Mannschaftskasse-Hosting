@@ -60,6 +60,11 @@ const spielerZahlungBezahlenDB = async (z_id, params) => {
         'UPDATE zahlungen_tbl SET barzahlung = TRUE WHERE z_id = $1 RETURNING *',
         [z_id],
       );
+    } else {
+      const { rows } = await transaktion.query(
+        'UPDATE zahlungen_tbl SET barzahlung = FALSE WHERE z_id = $1 RETURNING *',
+        [z_id],
+      );
     }
 
     patched = rows[0];

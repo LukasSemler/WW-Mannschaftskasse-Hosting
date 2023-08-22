@@ -45,3 +45,12 @@ PATCH http://localhost:2410/zahlung/9
 ### Zahlung löschen
 DELETE http://localhost:2410/zahlung/9
 
+
+####
+
+GET http://localhost:2410/paymentType
+
+####
+
+GET http://localhost:2410/sumType
+
