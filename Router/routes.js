@@ -6,6 +6,8 @@ import {
   spielerLoeschenController,
   spielerBekommenController,
   loginController,
+  getPaymentTypePlayer,
+  getSumTypePlayer,
 } from '../Controllers/spieler.js';
 
 import {
@@ -40,5 +42,8 @@ router.delete('/zahlung/:z_id', asyncHandler(spielerZahlungLoeschenController));
 //Stats
 router.get('/paymentType', asyncHandler(getPaymentType));
 router.get('/sumType', asyncHandler(getSumType));
+
+router.get('/paymentTypePlayer/:id', asyncHandler(getPaymentTypePlayer));
+router.get('/sumTypePlayer/:id', asyncHandler(getSumTypePlayer));
 
 export default router;

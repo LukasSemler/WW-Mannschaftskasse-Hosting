@@ -66,4 +66,31 @@ const loginDB = async (email, password) => {
   return false;
 };
 
-export { testDB, spielerBekommenDB, spielerErstellenDB, spielerLoeschenDB, loginDB };
+const getPaymentTypePlayerDB = async (id) => {
+  const { rows } = await query(
+    'SELECT COUNT(CASE WHEN barzahlung = true THEN 1 ELSE NULL END) AS barzahlung, COUNT(CASE WHEN barzahlung = false THEN 1 ELSE NULL END) AS karte, COUNT(CASE WHEN bezahlt = false THEN 1 ELSE NULL END) AS offen, COUNT(fk_s_id) AS total FROM zahlungen_tbl WHERE fk_s_id = $1;',
+    [id],
+  );
+
+  if (!rows[0]) return null;
+  return rows;
+};
+
+const getSumTypePlayerDB = async (id) => {
+  const { rows } = await query(
+    'SELECT SUM(CASE WHEN barzahlung = true THEN betrag ELSE 0 END) AS barzahlung, SUM(CASE WHEN barzahlung = false THEN betrag ELSE 0 END) AS karte FROM zahlungen_tbl WHERE fk_s_id = $1;',
+    [id],
+  );
+  if (!rows[0]) return null;
+  return rows;
+};
+
+export {
+  testDB,
+  spielerBekommenDB,
+  spielerErstellenDB,
+  spielerLoeschenDB,
+  loginDB,
+  getPaymentTypePlayerDB,
+  getSumTypePlayerDB,
+};

@@ -4,6 +4,8 @@ import {
   spielerErstellenDB,
   spielerLoeschenDB,
   loginDB,
+  getPaymentTypePlayerDB,
+  getSumTypePlayerDB,
 } from '../Models/spieler.js';
 
 //Test-Controller
@@ -58,10 +60,28 @@ const loginController = async (req, res) => {
   return res.status(400).send('Beim Login ist ein Fehler aufgetreten!');
 };
 
+const getPaymentTypePlayer = async (req, res) => {
+  const { id } = req.params;
+
+  const result = await getPaymentTypePlayerDB(id);
+  if (result) res.status(200).json(result);
+  else res.status(404).json({ message: 'Not found' });
+};
+
+const getSumTypePlayer = async (req, res) => {
+  const { id } = req.params;
+
+  const result = await getSumTypePlayerDB(id);
+  if (result) res.status(200).json(result);
+  else res.status(404).json({ message: 'Not found' });
+};
+
 export {
   testController,
   spielerBekommenController,
   spielerErstellenController,
   spielerLoeschenController,
   loginController,
+  getPaymentTypePlayer,
+  getSumTypePlayer,
 };
