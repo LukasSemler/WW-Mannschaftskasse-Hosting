@@ -21,6 +21,8 @@ import {
 
 import { getPaymentType, getSumType } from '../Controllers/stats.js';
 
+import { getSuggestions, addLike, addDislike, addSuggestion } from '../Controllers/suggestions.js';
+
 const router = express.Router();
 
 //----------------ROUTEN-----------
@@ -50,5 +52,10 @@ router.get('/sumType', asyncHandler(getSumType));
 
 router.get('/paymentTypePlayer/:id', asyncHandler(getPaymentTypePlayer));
 router.get('/sumTypePlayer/:id', asyncHandler(getSumTypePlayer));
+
+router.get('/suggestions', asyncHandler(getSuggestions));
+router.patch('/suggestionsL/:id', asyncHandler(addLike));
+router.patch('/suggestionsD/:id', asyncHandler(addDislike));
+router.post('/suggestions', asyncHandler(addSuggestion));
 
 export default router;

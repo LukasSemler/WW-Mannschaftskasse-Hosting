@@ -65,3 +65,11 @@ GET http://localhost:2410/sumTypePlayer/12
 ####
 GET http://localhost:2410/ausgaben
 
+
+####
+GET http://localhost:2410/suggestions
+
+####
+
+PATCH http://localhost:2410/suggestionsL/1
+
