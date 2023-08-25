@@ -62,3 +62,6 @@ GET http://localhost:2410/paymentTypePlayer/12
 
 GET http://localhost:2410/sumTypePlayer/12
 
+####
+GET http://localhost:2410/ausgaben
+

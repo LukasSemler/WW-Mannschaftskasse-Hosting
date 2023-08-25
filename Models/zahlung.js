@@ -80,9 +80,30 @@ const spielerZahlungBezahlenDB = async (z_id, params) => {
   return patched;
 };
 
+const getAusgabenDB = async () => {
+  const { rows } = await query(
+    'SELECT a_id, amount, reason, zeitpunkt from ausgaben order by zeitpunkt DESC;',
+  );
+
+  if (!rows[0]) return null;
+  return rows;
+};
+
+const postAusgabenDB = async (amount, reason) => {
+  const { rows } = await query(
+    'INSERT INTO ausgaben (amount, reason, zeitpunkt) VALUES ($1, $2, now()) RETURNING *',
+    [amount, reason],
+  );
+
+  if (!rows[0]) return null;
+  return rows[0];
+};
+
 export {
   spielerZahlungBekommenDB,
   spielerZahlungErstellenDB,
   spielerZahlungLoeschenDB,
   spielerZahlungBezahlenDB,
+  getAusgabenDB,
+  postAusgabenDB,
 };

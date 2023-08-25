@@ -3,6 +3,8 @@ import {
   spielerZahlungErstellenDB,
   spielerZahlungLoeschenDB,
   spielerZahlungBezahlenDB,
+  getAusgabenDB,
+  postAusgabenDB,
 } from '../Models/zahlung.js';
 
 //Zahlung von Spieler bekommen
@@ -57,9 +59,27 @@ const spielerZahlungBezahlenController = async (req, res) => {
     );
 };
 
+const getAusgabenController = async (req, res) => {
+  const result = await getAusgabenDB();
+
+  if (result) return res.status(200).json(result);
+  return res.status(400).send('Beim bekommen der Ausgaben ist ein Fehler aufgetreten!');
+};
+
+const postAusgabenController = async (req, res) => {
+  const { amount, reason } = req.body;
+
+  const result = await postAusgabenDB(amount, reason);
+
+  if (result) return res.status(200).json(result);
+  return res.status(400).send('Beim posten der Ausgaben ist ein Fehler aufgetreten!');
+};
+
 export {
   spielerZahlungBekommenController,
   spielerZahlungErstellenController,
   spielerZahlungBezahlenController,
   spielerZahlungLoeschenController,
+  getAusgabenController,
+  postAusgabenController,
 };

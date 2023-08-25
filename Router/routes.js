@@ -15,6 +15,8 @@ import {
   spielerZahlungErstellenController,
   spielerZahlungBezahlenController,
   spielerZahlungLoeschenController,
+  getAusgabenController,
+  postAusgabenController,
 } from '../Controllers/zahlung.js';
 
 import { getPaymentType, getSumType } from '../Controllers/stats.js';
@@ -38,6 +40,9 @@ router.get('/zahlung', asyncHandler(spielerZahlungBekommenController));
 router.post('/zahlung', asyncHandler(spielerZahlungErstellenController));
 router.patch('/zahlung/:z_id', asyncHandler(spielerZahlungBezahlenController));
 router.delete('/zahlung/:z_id', asyncHandler(spielerZahlungLoeschenController));
+
+router.get('/ausgaben', asyncHandler(getAusgabenController));
+router.post('/ausgaben', asyncHandler(postAusgabenController));
 
 //Stats
 router.get('/paymentType', asyncHandler(getPaymentType));

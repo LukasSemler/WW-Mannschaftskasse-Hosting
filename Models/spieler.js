@@ -26,9 +26,7 @@ GROUP BY sp.s_id, sp.nachname ORDER BY sp.nachname ASC;`,
   obj.spieler = spielerRows;
 
   const { rows: insgesamtSummeRows } = await query(`
-  SELECT SUM(betrag) as sum
-  from zahlungen_tbl
-  WHERE bezahlt = true;`);
+  SELECT (SELECT SUM(betrag) from zahlungen_tbl WHERE bezahlt = true) - (SELECT CASE WHEN SUM(amount) IS NULL THEN 0 ELSE SUM(amount) END from ausgaben) as sum;`);
   if (!insgesamtSummeRows[0]) return null;
   obj.insgesamtEingezahlteSumme = insgesamtSummeRows[0].sum;
 
