@@ -60,4 +60,30 @@ const addSuggestionDB = async (suggestion) => {
   return rows[0];
 };
 
-export { getSuggestionsDB, addLikeDB, addDislikeDB, addSuggestionDB };
+const removeLikeDB = async (id) => {
+  const { rows } = await query(
+    `UPDATE suggestions SET likes = likes - 1 WHERE sg_id = $1 RETURNING *;`,
+    [id],
+  );
+
+  if (!rows[0]) return null;
+  return rows[0];
+};
+
+const removeDislikeDB = async (id) => {
+  const { rows } = await query(
+    'UPDATE suggestions SET dislike = dislike - 1 WHERE sg_id = $1 RETURNING *;',
+  );
+
+  if (!rows[0]) return null;
+  return rows[0];
+};
+
+export {
+  getSuggestionsDB,
+  addLikeDB,
+  addDislikeDB,
+  addSuggestionDB,
+  removeLikeDB,
+  removeDislikeDB,
+};

@@ -21,7 +21,7 @@ import {
 
 import { getPaymentType, getSumType } from '../Controllers/stats.js';
 
-import { getSuggestions, addLike, addDislike, addSuggestion } from '../Controllers/suggestions.js';
+import { getSuggestions, addLike, addDislike, addSuggestion, removeLike, removeDislike } from '../Controllers/suggestions.js';
 
 const router = express.Router();
 
@@ -54,8 +54,11 @@ router.get('/paymentTypePlayer/:id', asyncHandler(getPaymentTypePlayer));
 router.get('/sumTypePlayer/:id', asyncHandler(getSumTypePlayer));
 
 router.get('/suggestions', asyncHandler(getSuggestions));
-router.patch('/suggestionsL/:id', asyncHandler(addLike));
-router.patch('/suggestionsD/:id', asyncHandler(addDislike));
 router.post('/suggestions', asyncHandler(addSuggestion));
 
+router.patch('/suggestionsL/:id', asyncHandler(addLike));
+router.patch('/suggestionsD/:id', asyncHandler(addDislike));
+
+router.patch('/removeSuggestionsL/:id', asyncHandler(removeLike));
+router.patch('/removeSuggestionsD/:id', asyncHandler(removeDislike));
 export default router;

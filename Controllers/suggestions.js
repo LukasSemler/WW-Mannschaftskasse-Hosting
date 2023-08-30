@@ -3,6 +3,8 @@ import {
   addLikeDB,
   addDislikeDB,
   addSuggestionDB,
+  removeLikeDB,
+  removeDislikeDB,
 } from '../Models/suggestions.js';
 
 const getSuggestions = async (req, res) => {
@@ -33,4 +35,18 @@ const addSuggestion = async (req, res) => {
   else res.status(404).json({ message: 'Not found' });
 };
 
-export { getSuggestions, addLike, addDislike, addSuggestion };
+const removeLike = async (req, res) => {
+  const { id } = req.params;
+  const result = await removeLikeDB(id);
+  if (result) res.status(200).json(result);
+  else res.status(404).json({ message: 'Not found' });
+};
+
+const removeDislike = async (req, res) => {
+  const { id } = req.params;
+  const result = await removeDislikeDB(id);
+  if (result) res.status(200).json(result);
+  else res.status(404).json({ message: 'Not found' });
+};
+
+export { getSuggestions, addLike, addDislike, addSuggestion, removeLike, removeDislike };
