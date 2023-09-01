@@ -37,16 +37,21 @@ const addSuggestion = async (req, res) => {
 
 const removeLike = async (req, res) => {
   const { id } = req.params;
+
   const result = await removeLikeDB(id);
-  if (result) res.status(200).json(result);
-  else res.status(404).json({ message: 'Not found' });
+  console.log(result);
+
+  if (result) return res.status(200).json(result);
+  return res.status(400).send('Error when removing a like');
 };
 
 const removeDislike = async (req, res) => {
   const { id } = req.params;
+
   const result = await removeDislikeDB(id);
-  if (result) res.status(200).json(result);
-  else res.status(404).json({ message: 'Not found' });
+  console.log(result);
+  if (result) return res.status(200).json(result);
+  return res.status(400).send('Error when removing a dislike');
 };
 
 export { getSuggestions, addLike, addDislike, addSuggestion, removeLike, removeDislike };

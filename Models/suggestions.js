@@ -62,17 +62,18 @@ const addSuggestionDB = async (suggestion) => {
 
 const removeLikeDB = async (id) => {
   const { rows } = await query(
-    `UPDATE suggestions SET likes = likes - 1 WHERE sg_id = $1 RETURNING *;`,
+    'UPDATE suggestions SET likes = likes - 1 WHERE sg_id = $1 RETURNING *;',
     [id],
   );
 
-  if (!rows[0]) return null;
-  return rows[0];
+  if (rows[0]) return rows;
+  return false;
 };
 
 const removeDislikeDB = async (id) => {
   const { rows } = await query(
-    'UPDATE suggestions SET dislike = dislike - 1 WHERE sg_id = $1 RETURNING *;',
+    `UPDATE suggestions SET dislikes = dislikes - 1 WHERE sg_id = $1 RETURNING *;`,
+    [id],
   );
 
   if (!rows[0]) return null;
