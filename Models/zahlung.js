@@ -12,7 +12,7 @@ import { query, pool } from '../DB/index.js';
 const spielerZahlungBekommenDB = async (s_id) => {
   //Schauen ob User existiert
   const { rows } = await query(
-    'SELECT z_id, bezahlt, betrag, grund, barzahlung, zeitpunkt, vorname, nachname, profilbild_url, isAdmin from zahlungen_tbl JOIN spieler_tbl st on st.s_id = zahlungen_tbl.fk_s_id ORDER BY zeitpunkt DESC;',
+    'SELECT z_id, bezahlt, betrag, grund, barzahlung, zeitpunkt, vorname, nachname, profilbild_url, isAdmin, EXTRACT(day FROM (until - now())) AS remaining from zahlungen_tbl JOIN spieler_tbl st on st.s_id = zahlungen_tbl.fk_s_id ORDER BY zeitpunkt DESC;',
   );
 
   if (!rows[0]) return null;
@@ -28,7 +28,12 @@ const spielerZahlungErstellenDB = async (neueZahlung) => {
   );
 
   if (!rows[0]) return null;
-  return rows[0];
+
+  const { rows: rows2 } = await query(
+    "UPDATE zahlungen_tbl SET until = zeitpunkt + INTERVAL '1 month' WHERE z_id = $1 returning *;",
+    [rows[0].z_id],
+  );
+  return rows2[0];
 };
 
 //Zahlung von Spieler löschen
