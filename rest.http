@@ -24,7 +24,7 @@ GET http://localhost:2410/spieler
 
 
 ### Zahlung von einem spieler bekommen
-GET http://localhost:2410/zahlung/2
+GET http://localhost:2410/zahlung
 
 
 ### Zahlung erstellen

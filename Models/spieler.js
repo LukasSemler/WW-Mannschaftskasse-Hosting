@@ -15,6 +15,7 @@ const testDB = async (email, password) => {
 const spielerBekommenDB = async () => {
   let obj = {};
 
+  //Alle Spieler bekommen
   const { rows: spielerRows } = await query(
     `SELECT sp.*, SUM(zt.betrag) as zuzahlen
 from spieler_tbl sp
@@ -25,6 +26,7 @@ GROUP BY sp.s_id, sp.nachname ORDER BY sp.nachname ASC;`,
   if (!spielerRows[0]) return null;
   obj.spieler = spielerRows;
 
+  //Die ganze bisher eingezahlte Summe bekommen
   const { rows: insgesamtSummeRows } = await query(`
   SELECT (SELECT SUM(betrag) from zahlungen_tbl WHERE bezahlt = true) - (SELECT CASE WHEN SUM(amount) IS NULL THEN 0 ELSE SUM(amount) END from ausgaben) as sum;`);
   if (!insgesamtSummeRows[0]) return null;

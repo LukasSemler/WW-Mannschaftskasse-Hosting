@@ -90,7 +90,7 @@ const getAusgabenDB = async () => {
     'SELECT a_id, amount, reason, zeitpunkt from ausgaben order by zeitpunkt DESC;',
   );
 
-  if (!rows[0]) return null;
+  if (!rows[0]) return []; //Leeres array ausgeben weil 400er Status nicht Cachebar ist...
   return rows;
 };
 

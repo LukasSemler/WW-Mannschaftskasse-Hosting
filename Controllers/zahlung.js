@@ -63,7 +63,7 @@ const getAusgabenController = async (req, res) => {
   const result = await getAusgabenDB();
 
   if (result) return res.status(200).json(result);
-  return res.status(400).send('Beim bekommen der Ausgaben ist ein Fehler aufgetreten!');
+  return res.status(400).send('Beim bekommen ist ein Fehler aufgetreten!');
 };
 
 const postAusgabenController = async (req, res) => {
