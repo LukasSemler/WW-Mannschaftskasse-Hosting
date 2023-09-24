@@ -43,7 +43,7 @@ PATCH http://localhost:2410/zahlung/9
 
 
 ### Zahlung löschen
-DELETE http://localhost:2410/zahlung/9
+DELETE http://localhost:2410/zahlung/96
 
 
 ####
