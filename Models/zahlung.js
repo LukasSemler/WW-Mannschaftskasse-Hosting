@@ -11,30 +11,22 @@ import { query, pool } from '../DB/index.js';
 
 const spielerZahlungBekommenDB = async (s_id) => {
   //Schauen ob User existiert
-  const { rows } = await query(
-    `SELECT
-    z_id,
-    bezahlt,
-    betrag,
-    grund,
-    barzahlung,
-    zeitpunkt,
-    vorname,
-    nachname,
-    profilbild_url,
-    isAdmin,
-    EXTRACT(day FROM (until - now())) AS remaining,
-    CASE WHEN bezahlt = false THEN offen ELSE 0 END AS offen
+  const { rows } = await query(`SELECT z_id,
+       bezahlt,
+       betrag,
+       grund,
+       barzahlung,
+       zeitpunkt,
+       vorname,
+       nachname,
+       profilbild_url,
+       isAdmin,
+       EXTRACT(day FROM (until - now())) AS remaining,
+       -- Hinzugefügte Spalte für die insgesamt offene Summe pro Spieler
+       COALESCE(SUM(CASE WHEN bezahlt = false THEN betrag ELSE 0 END) OVER (PARTITION BY st.s_id), 0) AS insgesamt_offene_summe
 FROM zahlungen_tbl
 JOIN spieler_tbl st ON st.s_id = zahlungen_tbl.fk_s_id
-LEFT JOIN (
-    SELECT fk_s_id, SUM(betrag) AS offen
-    FROM zahlungen_tbl
-    WHERE bezahlt = false
-    GROUP BY fk_s_id
-) AS offen_totals ON st.s_id = offen_totals.fk_s_id
-ORDER BY zeitpunkt DESC;`,
-  );
+ORDER BY zeitpunkt DESC;`);
 
   if (!rows[0]) return null;
   return rows;
